@@ -9,6 +9,7 @@ import ProductDetail from './app/components/ProductDetail'
 import {createStackNavigator} from "@react-navigation/stack"
 import { NavigationContainer } from "@react-navigation/native";
 import SignUp from './app/components/SingUp';
+import Cart from "./app/components/Cart";
 
 const Stack = createStackNavigator();
 
@@ -38,6 +39,10 @@ export default function App() {
          <Stack.Screen 
         name="ProductDetail"
         component={ProductDetail}
+        />
+        <Stack.Screen 
+        name="Cart"
+        component={Cart}
         />
       </Stack.Navigator>
     </NavigationContainer>

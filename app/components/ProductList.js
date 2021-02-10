@@ -36,25 +36,38 @@ const [imageData,setImageData] = useState([])
 
 // https://api.unsplash.com/photos/?client_id=YOUR_ACCESS_KEY
 
+    const [productDetail,setProductDetail] = useState({
+        id:'12345',
+        urls:'',
+        desc:'nnnn'
+    })
 
     const getImageData = (id,urls,desc)=>{
-        console.log(id,urls,desc)
+        // console.log(id,urls,desc)
         // alert(desc)
-          id={id}
-          urls={urls}
-          desc={desc}        
+        //   id={id}
+        //   urls={urls}
+        //   desc={desc}   
+        setProductDetail({
+            id,
+            urls,
+            desc
+        })
+        // alert(desc);
+
+        navigation.navigate('ProductDetail',productDetail)
+
     }
  
-    let data = {id,urls,desc};
+    //  let data = {id,urls,desc};
 
 
     const fetchImage = () =>{
         fetch(`https://api.unsplash.com/search/photos?client_id=SR3PuDaEbJV6epzzhoqZUEdC3fn6r5nZHEmywmuzvOc&query=${value}&orientation=landscape&per_page=6`)
         .then(res=>res.json())
         .then(data=>{
-            
             setResults(data.results)
-            console.log(data.results);
+            // console.log(data.results);
         })
     }
 
@@ -77,12 +90,12 @@ const [imageData,setImageData] = useState([])
                     cardData.map(item=>{
                         return (
                         <View key={item.id} 
-                        onPress={()=>getImageData(item.id,item.urls.small,item.alt_description)}
                         
                         >
                         <TouchableOpacity   
+                        onPress={()=>getImageData(item.id,item.urls.small,item.alt_description)}
                        
-                       onPress={()=>navigation.navigate('ProductDetail',data)}
+                    //    onPress={()=>navigation.navigate('ProductDetail',productDetail)}
                         >
                         <View>
                         <Image  

@@ -45,8 +45,8 @@ function Login({navigation}) {
             >
             <Text>Login</Text>
             </Button >
-            <TouchableOpacity style={{marginTop:10}}>
-            <Text style={{ textAlign: "center",fontSize:20 }}>don't have an account ?</Text>
+            <TouchableOpacity style={{marginTop:10}} onPress={()=>navigation.navigate('SignUp')}>
+            <Text style={{ textAlign: "center",fontSize:20 }}  >don't have an account ?</Text>
             </TouchableOpacity>
             </View>
           
