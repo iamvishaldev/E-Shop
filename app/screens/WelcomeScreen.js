@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     logoContainer:{
         position:"absolute",
         top:70,
-        alignItems:"center"
+        alignItems:"center",
     },
     logoText:{
         top:20,
@@ -51,7 +51,6 @@ const styles = StyleSheet.create({
         flex:1,
         flexDirection:'column',
         justifyContent:"center",
-        
     },
     loginButton:{
        

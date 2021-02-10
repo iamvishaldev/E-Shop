@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
-import { StyleSheet, Text, View ,Image,TouchableOpacity,KeyboardAvoidingView} from 'react-native';
-import { Button, Item, Input, Label } from 'native-base';
+import { StyleSheet, Text, View ,Image,TouchableOpacity,TextInput,Button} from 'react-native';
+// import { Button, Item, Input, Label } from 'native-base';
+// import { TextInput,Button } from 'react-native-paper';
 
 
 
@@ -21,32 +22,28 @@ function Login({navigation}) {
                 source={require("../assets/login.jpg")}/>
             </View>
             <View style={{marginTop:50}}>
-            <Item floatingLabel>
-              <Label>Email Id</Label>
-              <Input 
-              value={email}
+              <TextInput 
+              placeholder="Email Id"
+              style={{ height: 40, borderColor: 'gray', borderWidth: 1,borderRadius:6 ,textAlign:'center'}}
+               value={email}
               onChangeText={(text)=>setEmail(text)}
-              
-              />
-              console.warm(text);
-            </Item>
-            <Item floatingLabel>
-              <Label>Password</Label>
-              <Input 
+              /> 
+              <TextInput
+              placeholder="Password" 
+              style={{ height: 40, borderColor: 'gray', borderWidth: 1,borderRadius:6 ,textAlign:'center'}}
               secureTextEntry={true}
               value={Password}
               onChangeText={(text)=>setPassword(text)}
               />
-            </Item>
             </View>
             <View  style={{marginTop:20}}>
-            <Button full rounded success
-            onPress={()=>navigation.navigate('Product')}
-            >
-            <Text>Login</Text>
-            </Button >
+            <Button 
+             title="Login"
+             color="#841584"
+             onPress={()=>navigation.navigate('Product')}
+             />
             <TouchableOpacity style={{marginTop:10}} onPress={()=>navigation.navigate('SignUp')}>
-            <Text style={{ textAlign: "center",fontSize:20 }}  >don't have an account ?</Text>
+                    <Text style={{ textAlign: "center",fontSize:20 }}>don't have an account ?</Text>
             </TouchableOpacity>
             </View>
           
